@@ -1,13 +1,12 @@
 Disclaimer: I don't own this code, I just have used the code in this book (Please buy from [pyimagesearch.com](https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/)) , and added to it few pieces to build my image classifier. 
 Book: Deep Learning for Computer Vision with Python – Starter Bundle written by Dr. Adrian Rosebrock.
 
-## This folder consists of a building block for an image classifier from pyimagesearch.com, which can be used independently of the :
-
+## This folder consists of a building block for an image classifier from pyimagesearch.com
 1.  class SimpleDatasetLoader: Loads the images, labels into a lists and returns a numpy array for both the images and labels. Uses CV2. 
 
 2.  class SimplePreprocessor: This is for re-sizing the images as we all know, before training the models, we need to be cognizant of our  dataset size before even starting to work with image classification algorithms. 
 3. Finally, the image classification, using as arguments 1) the path to input dataset" 2)number of nearest neighbor classification 3) # of jobs for KNN distance (-1 uses all avaialble cores)
-   
+> 1. and 2. Can be used independently of the training model, which make this code reausable. 
 # CV-image-recognition
 
 We use sklearn library for image classification, in this case, and as ML classifier we use k-Nearest Neighbors
