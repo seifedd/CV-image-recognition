@@ -1,4 +1,4 @@
-Disclaimer: I don't own this code, I just have used the code in this book, and added to it few pieces to build my image classifier. 
+Disclaimer: I don't own this code, I just have used the code in this book (Please buy from [pyimagesearch.com]{https://www.pyimagesearch.com/deep-learning-computer-vision-python-book/}) , and added to it few pieces to build my image classifier. 
 Book: Deep Learning for Computer Vision with Python – Starter Bundle written by Dr. Adrian Rosebrock.
 
 ## This folder consists of a building block for an image classifier, which can be used independently of the :
