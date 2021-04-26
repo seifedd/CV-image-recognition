@@ -6,7 +6,7 @@ Book: Deep Learning for Computer Vision with Python – Starter Bundle written b
 
 2.  class SimplePreprocessor: This is for re-sizing the images as we all know, before training the models, we need to be cognizant of our  dataset size before even starting to work with image classification algorithms. 
 3. Finally, the image classification, using as arguments 1) the path to input dataset" 2)number of nearest neighbor classification 3) # of jobs for KNN distance (-1 uses all avaialble cores)
-> 1. and 2. Can be used independently of the training model, which make this code reausable. 
+> 1. and 2. Can be used independently of the training model, which makes this code reausable. 
 # CV-image-recognition
 
 We use sklearn library for image classification, in this case, and as ML classifier we use k-Nearest Neighbors
