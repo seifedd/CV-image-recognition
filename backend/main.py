@@ -7,13 +7,20 @@ import os
 
 app = FastAPI(title="CV Image Classifier MVP", description="MVP wrapper for k-NN Image Classifier")
 
-# Setup CORS to allow Vite frontend to access backend
+# Allowed origins - in production set ALLOWED_ORIGINS env var to Vercel URL
+_raw_origins = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174"
+)
+ALLOWED_ORIGINS = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+
+# Setup CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], # Restrict origins for better security
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["POST", "GET"],
+    allow_headers=["Content-Type"],
 )
 
 # Load Models
@@ -37,8 +44,13 @@ async def predict(file: UploadFile = File(...)):
     if not model or not label_encoder:
         return {"error": "Model not loaded. Please train first."}
     
-    # Read the uploaded image file
-    contents = await file.read()
+    # Security: limit file size to 5 MB
+    MAX_SIZE = 5 * 1024 * 1024
+    contents = await file.read(MAX_SIZE + 1)
+    if len(contents) > MAX_SIZE:
+        return {"error": "File too large. Maximum size is 5 MB."}
+
+    # Security: validate the content actually decodes as an image
     nparr = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 

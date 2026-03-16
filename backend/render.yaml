@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: vision-intelligence-api
+    runtime: python
+    region: ohio
+    plan: free
+    buildCommand: pip install -r requirements.txt && python train_and_save_model.py
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://vision-intelligence.vercel.app
