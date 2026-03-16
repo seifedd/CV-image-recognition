@@ -1,6 +1,6 @@
 # 🔬 Vision Intelligence — FullStack Image Classifier MVP
 
-> **Live Demo:** [vision-intelligence.vercel.app](https://vision-intelligence.vercel.app)  
+> **Live Demo:** [vision-intelligence-classifier.netlify.app](https://vision-intelligence-classifier.netlify.app)  
 > **API Docs:** [vision-intelligence-api.onrender.com/docs](https://vision-intelligence-api.onrender.com/docs)
 
 A full-stack MVP showcasing advanced ML integration with a modern web application. Upload any image and have it classified by a K-Nearest Neighbors (k-NN) model exposed through a REST API.
@@ -11,7 +11,7 @@ A full-stack MVP showcasing advanced ML integration with a modern web applicatio
 
 ```
 [React / Vite Frontend]  ──HTTP──►  [FastAPI Backend]  ──►  [k-NN Model (sklearn + joblib)]
-     Deployed on Vercel                Deployed on Render
+     Deployed on Netlify                Deployed on Render
 ```
 
 ## 🚀 Tech Stack
@@ -21,7 +21,7 @@ A full-stack MVP showcasing advanced ML integration with a modern web applicatio
 | Frontend  | React, Vite, Vanilla CSS          |
 | Backend   | Python, FastAPI, Uvicorn          |
 | ML        | scikit-learn k-NN, OpenCV, joblib |
-| Deploy    | Vercel (frontend) + Render (API)  |
+| Deploy    | Netlify (frontend) + Render (API) |
 
 ## 📦 Local Development
 
